@@ -1,0 +1,4 @@
+constants.py
+__pycache__/
+.vscode/
+platsbokning/tickets/

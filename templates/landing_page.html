@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22olwe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='landing_page.css') }}?v=1">
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>Oliver Westin TE22A</h1>
+    </header>
+    <div class="button-container">
+        <form method="POST" action="/ldr-rating">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/ldr.png') }}" width="80" height="80">
+                <p>Lana Del Rey Song Ranking</p>
+            </button>
+        </form>
+        <form method="POST" action="/platsbokning">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/sj.png') }}" width="80" height="80">
+                <p>SJ Platsbokning (Skolprojekt)</p>
+            </button>
+        </form>
+    </div>
+</body>
+</html>
