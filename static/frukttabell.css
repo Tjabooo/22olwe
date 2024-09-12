@@ -1,0 +1,58 @@
+@font-face {
+    font-family: fontawesome;
+    src: url("../assets/fontawesome-webfont.ttf");
+}
+
+
+body {
+    background-color: #CCCCCC;
+    text-align: center;
+}
+
+table {
+    width: 600px;
+    margin: auto;
+}
+
+.title,
+.left-col,
+.right-col {
+    border: 3px solid black;
+    font-family: 'fontawesome', sans-serif;
+}
+
+
+
+tr {
+    height: 50px;
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 28px;
+    background-color: #01FFFF;
+    width: 591px;
+    margin: auto;
+    font-family: Verdana, sans-serif;
+}
+
+.left-col {
+    background-color: #FF00FE;
+    width: 300px;
+    font-size: 25px;
+}
+
+.right-col {
+    background-color: white;
+    width: 300px;
+    padding: 15px;
+}
+
+.right-col>a>img {
+    height: 100px;
+}
+
+.list-title {
+    font-weight: bold;
+    font-family: Garamond, sans-serif;
+}

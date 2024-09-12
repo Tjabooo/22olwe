@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Westin TE22A</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainStyle.css') }}?v=1">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>
+            <span class="special-char">~/</span>
+        </h1>
+    </header>
+    <div class="button-container">
+        <form method="POST" action="/ldr-rating">
+            <button type="submit">
+                <img id="LDR" src="{{ url_for('static', filename='media/ldr.jpg') }}" width="80" height="80">
+                <p>Lana Del Rey Song Ranking</p>
+            </button>
+        </form>
+        <form method="POST" action="/skolarbete">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/ssis.png') }}" width="80" height="80">
+                <p>Skolarbete</p>
+            </button>
+        </form>
+        <a href="https://github.com/Tjabooo" style="text-decoration: none;">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/github.jpg') }}" width="80" height="80">
+                <p>My GitHub</p>
+            </button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/platsbokning.css?v=1">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+    <title>Platsbokning</title>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="back-button-container">
+            <button class="back-button" onclick="history.back()">
+                <img src="{{ url_for('static', filename='media/back.png') }}">
+            </button>
+        </div>
+        <h1>
+            <span class="special-char">~/</span>
+            Skolarbete
+            <span class="special-char">/</span>
+            Programmering 1
+            <span class="special-char">/</span>
+            SJ Platsbokning
+        </h1>
+    </header>
+    <main>
+        <div class="center">
+            <div class="action">
+                <form method="POST" action="/skolarbete/programmering-1/platsbokning/book_ticket">
+                    <button type="submit">Boka biljett</button>
+                </form>
+            </div>
+            <br>
+            <div class="action">
+                <button id="cancel_ticket">Avboka biljett</button>
+            </div>
+            <br>
+            <div class="action">
+                <button id="print_tickets">Skriv ut biljetter</button>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="module" src="/static/cogs/buttonEvents.js"></script>
+</body>
+</html>

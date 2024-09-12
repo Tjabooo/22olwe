@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="se">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frukt tabellen</title>
+    <link href="{{ url_for('static', filename='frukttabell.css') }}?v=1" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <table>
+        <div class="title">
+            Frukttabell
+        </div>
+
+        <tr>
+            <td class="left-col">Apelsin</td>
+            <td class="right-col">
+                <a href="apelsin">
+                    <img src="/static/media/orange.jpg" />
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-col">Mango</td>
+            <td class="right-col">
+                <a href="mango">
+                    <img src="/static/media/mango.jpg" />
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-col">Kiwi</td>
+            <td class="right-col">
+                <a href="kiwi">
+                    <img src="/static/media/kiwi_fruit.jpg" />
+                </a>
+            </td>
+        </tr>
+    </table>
+
+    <p class="list-title">Följande frukter är alltså representerade i tabellen</p>
+    <ul style="display: inline-block; list-style: decimal; text-align: left;">
+        <li>Apelsin</li>
+        <li>Mango</li>
+        <li>Kiwi</li>
+    </ul>
+</body>
+
+</html>

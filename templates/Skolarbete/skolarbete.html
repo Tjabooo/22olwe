@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skolarbete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainStyle.css') }}?v=1">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="back-button-container">
+            <button class="back-button" onclick="history.back()">
+                <img src="{{ url_for('static', filename='media/back.png') }}">
+            </button>
+        </div>
+        <h1>
+            <span class="special-char">~/</span>
+            Skolarbete
+        </h1>
+    </header>
+    <div class="button-container">
+        <form method="POST" action="/skolarbete/programmering-1">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/prog1.png') }}" width="80" height="80">
+                <p>Programmering 1</p>
+            </button>
+        </form>
+        <form method="POST" action="/skolarbete/webbutveckling">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/web.png') }}" width="80" height="80">
+                <p>Webbutveckling</p>
+            </button>
+        </form>
+    </div>
+</body>
+</html>

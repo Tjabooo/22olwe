@@ -1,0 +1,116 @@
+body,
+h1 {
+    font-family: Outfit;
+    margin: 0;
+    padding: 0;
+}
+
+.dark-mode {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 20px 0;
+    border-bottom: 2px solid #555;
+    position: relative;
+}
+
+.back-button-container {
+    position: absolute;
+    left: 20px;
+}
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.back-button:hover img {
+    filter: brightness(0.8);
+}
+
+main {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#song-container,
+#result-container {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#ranked-songs {
+    list-style: decimal;
+    padding-left: 20px;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+.song-button {
+    background-color: #333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.song-button:hover {
+    background-color: #555;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.special-char {
+    color: #FFB6A3;
+}
