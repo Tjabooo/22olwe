@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+span{
+    font-weight: bold;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.col-1,
+.col-2,
+.col-3 {
+    color: blue;
+    text-align: center;
+}
+
+.col-1 {
+    background-color: #FFC0CB;
+}
+
+.col-2{
+    background-color: #FFFFCC;
+}
+
+.col-3{
+    background-color: #FFFF00;
+}

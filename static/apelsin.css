@@ -1,0 +1,13 @@
+body {
+    background-color: #CCCCCC;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+ul {
+    list-style: circle;
+}

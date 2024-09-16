@@ -90,6 +90,18 @@ class Routes():
     def frukttabell():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/frukttabell.html')
 
+    @app.route('/skolarbete/webbutveckling/inlamningar/uppgifter/mango')
+    def mango():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/mango.html')
+
+    @app.route('/skolarbete/webbutveckling/inlamningar/uppgifter/apelsin')
+    def apelsin():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/apelsin.html')
+    
+    @app.route('/skolarbete/webbutveckling/inlamningar/uppgifter/kiwi')
+    def kiwi():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/kiwi.html')
+
     @app.route('/skolarbete/programmering-1/bevy', methods=['POST'])
     def bevy():
         return render_template('/Skolarbete/Programmering 1/Bevy/bevy.html')
