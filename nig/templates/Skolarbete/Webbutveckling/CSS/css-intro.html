@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skolarbete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainStyle.css') }}?v=1">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="back-button-container">
+            <button class="back-button" onclick="history.back()">
+                <img src="{{ url_for('static', filename='media/back.png') }}">
+            </button>
+        </div>
+        <h1>
+            <span class="special-char">~/</span>
+            Skolarbete
+            <span class="special-char">/</span>
+            Webbutveckling
+            <span class="special-char">/</span>
+            CSS Uppgifter
+        </h1>
+    </header>
+    <div class="button-container">
+        <form method="POST" action="/skolarbete/webbutveckling/css-intro/css-uppgift-1">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/uppgift.png') }}" width="80" height="80">
+                <p>Uppgift 1</p>
+            </button>
+        </form>
+        <form method="POST" action="/skolarbete/webbutveckling/css-intro/css-uppgift-2">
+            <button type="submit">
+                <img src="{{ url_for('static', filename='media/uppgift.png') }}" width="80" height="80">
+                <p>Uppgift 2</p>
+            </button>
+        </form>        
+    </div>
+</body>
+</html>
