@@ -82,11 +82,11 @@ class Routes():
     def inlamningar():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/inlamningar.html')
     
-    @app.route('/skolarbete/webbutveckling/inlamningar/boxmodellen', methods=['POST'])
+    @app.route('/skolarbete/webbutveckling/inlamningar/boxmodellen', methods=['POST', 'GET'])
     def boxmodellen():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/boxmodellen.html')
     
-    @app.route('/skolarbete/webbutveckling/inlamningar/frukttabell', methods=['POST'])
+    @app.route('/skolarbete/webbutveckling/inlamningar/frukttabell', methods=['POST', 'GET'])
     def frukttabell():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/frukttabell.html')
 
