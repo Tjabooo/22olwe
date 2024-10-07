@@ -1,9 +1,0 @@
-body {
-    background-image: linear-gradient(
-        to right,
-        #7ed56f,
-        #28b485
-        ),
-        url(isgud.jpg);
-    background-size: cover;
-}
