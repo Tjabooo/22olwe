@@ -77,6 +77,10 @@ class Routes():
     @app.route('/skolarbete/webbutveckling/css-intro/css-uppgift-2', methods=['POST'])
     def css_uppgift_2():
         return render_template('/Skolarbete/Webbutveckling/CSS/Uppgifter/css-uppgift-2.html')
+
+    @app.route('/skolarbete/webbutveckling/css-intro/css-uppgift-2', methods=['POST'])
+    def css_uppgift_2():
+        return render_template('/Skolarbete/Webbutveckling/CSS/Uppgifter/css-uppgift-3.html')
     
     @app.route('/skolarbete/webbutveckling/inlamningar', methods=['POST'])
     def inlamningar():
