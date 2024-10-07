@@ -3,10 +3,19 @@
     <head>
         <meta charset="utf-8" />
         <title>Amazing Places Travels</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='css-uppgift-3.css') }}" />
+        <style>
+            body {
+                background-image: linear-gradient(
+                    to right,
+                    #7ed56f,
+                    #28b485
+                    ),
+                    url("{{ url_for ('static', filename='media/isgud.jpg') }}");
+                background-size: cover;
+            }
+        </style>    
     </head>
-
-    <body>
-            
+    
+    <body>  
     </body>
 </html>
