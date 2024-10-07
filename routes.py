@@ -78,7 +78,7 @@ class Routes():
     def css_uppgift_2():
         return render_template('/Skolarbete/Webbutveckling/CSS/Uppgifter/css-uppgift-2.html')
 
-    @app.route('/skolarbete/webbutveckling/css-intro/css-uppgift-2', methods=['POST'])
+    @app.route('/skolarbete/webbutveckling/css-intro/css-uppgift-3', methods=['POST'])
     def css_uppgift_3():
         return render_template('/Skolarbete/Webbutveckling/CSS/Uppgifter/css-uppgift-3.html')
     
