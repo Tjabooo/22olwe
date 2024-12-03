@@ -1,6 +1,6 @@
 <div class="bottom-bar">
     <div class="bottom-bar-image-container">
-        <img class="bottom-bar-img" src="/assets/img/logo.png" alt="Logo">
+        <img class="bottom-bar-img" src="{{ url_for('static', filename='turistsida-static/assets/img/logo.png') }}" alt="Logo">
     </div>
 
     <div class="contact-container">
@@ -10,13 +10,13 @@
             </li>
             <li>
                 <p>
-                    <img class="contact-icon" src="/assets/icons/phone-icon.png" alt="Phone">
+                    <img class="contact-icon" src="{{ url_for('static', filename='turistsida-static/assets/icons/phone-icon.png') }}" alt="Phone">
                     +46 012-345 67 89
                 </p>
             </li>
             <li>
                 <p>
-                    <img class="contact-icon" src="/assets/icons/mail-icon.png" alt="Mail">
+                    <img class="contact-icon" src="{{ url_for('static', filename='turistsida-static/assets/icons/mail-icon.png') }}" alt="Mail">
                     contact@mexicocity.se
                 </p>
             </li>

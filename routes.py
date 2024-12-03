@@ -102,7 +102,7 @@ class Routes():
     def kiwi():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/kiwi.html')
 
-    @app.route('/skolarbete/webbutveckling/inlamningar/turistsida', methods=['POST'])
+    @app.route('/skolarbete/webbutveckling/inlamningar/turistsida', methods=['POST', 'GET'])
     def turistsida():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/index.html')
 
@@ -113,6 +113,18 @@ class Routes():
     @app.route('/Partials/navigation-bar', methods=['GET'])
     def navigation():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/Partials/navigation-bar.html')
+
+    @app.route('/skolarbete/webbutveckling/inlamningar/turistsida/se-och-gora', methods=['GET'])
+    def se_och_gora():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/Se-och-gör/Se-och-gör.html')
+
+    @app.route('/skolarbete/webbutveckling/inlamningar/turistsida/information', methods=['GET'])
+    def information():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/Information/information.html')
+
+    @app.route('/skolarbete/webbutveckling/inlamningar/turistsida/mat-och-dryck', methods=['GET'])
+    def mat_och_dryck():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/Mat och dryck/mat-och-dryck.html')
 
     @app.route('/skolarbete/programmering-1/bevy', methods=['POST'])
     def bevy():

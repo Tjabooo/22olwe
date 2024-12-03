@@ -31,16 +31,16 @@
              <div class = cover >
                  <div class = "scroll-images">
                      <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "../assets/img/main-fakta1.jpg"> 
+                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta1.jpg') }}"> 
                      </div>
                      <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "../assets/img/main-fakta2.webp"> 
+                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta2.webp') }}"> 
                      </div>
                      <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "../assets/img/main-fakta3.jpeg"> 
+                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta3.jpeg') }}"> 
                      </div>
                      <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "../assets/img/main-fakta1.jpg"> 
+                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta1.jpg') }}"> 
                      </div>
  
                  </div>
@@ -54,7 +54,7 @@
 
     <div id="footer"></div>
 
-    <script src = "../script.js"></script>
+    <script src="{{ url_for('static', filename='turistsida-static/script.js') }}"></script>
 
 </body>
 </html>

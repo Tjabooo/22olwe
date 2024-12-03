@@ -11,7 +11,7 @@
     <div id="navigation-bar"></div>
 
     <div class= "image_holder">
-        <img class="img1" src="assets/img/Main-bild.webp">
+        <img class="img1" src="{{ url_for('static', filename='turistsida-static/assets/img/Main-bild.webp') }}">
         <div class="intro">
             <h1 class="title">Välkommen till Mexico city</h1>
             <p class="title-p">
@@ -30,9 +30,9 @@
         </p>
 
         <div class = "images_container">
-            <a><img class = "show-img1" src = "assets/img/main-slott.jpg"></a>
-            <a><img class = "show-img-other" src = "assets/img/pyramiderna.jpg"></a>
-            <a><img class = "show-img-other" src = "assets/img/main-natur.webp"></a>
+            <a><img class = "show-img1" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-slott.jpg') }}"></a>
+            <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/pyramiderna.jpg') }}"></a>
+            <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-natur.webp') }}"></a>
         </div>
     </div>
    
@@ -43,9 +43,9 @@
             Traditionella drycker som tequila och mezcal är populära, ofta tillsammans med läskande agua fresca eller horchata.
         </p>
         <div class = "images_container">
-            <a><img class = "show-img1" src = "assets/img/main-tacobräda.jpg"></a>
-            <a><img class = "show-img-other" src = "assets/img/main-mat2.jpg"></a>
-            <a><img class = "show-img-other" src = "assets/img/main-mat3.jpg"></a>
+            <a><img class = "show-img1" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-tacobräda.jpg') }}"></a>
+            <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-mat2.jpg') }}"></a>
+            <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-mat3.jpg') }}"></a>
         </div>
 
     </div>
@@ -67,7 +67,7 @@
     
     <div id="footer"></div>
     
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='turistsida-static/script.js') }}"></script>
 
 </body>
 </html>

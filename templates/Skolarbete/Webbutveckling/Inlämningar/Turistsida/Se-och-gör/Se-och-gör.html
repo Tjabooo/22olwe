@@ -12,7 +12,7 @@
     <div id="navigation-bar"></div>
 
     <div class= "image_holder">
-        <img class = "img1" src="../assets/img/landmarks.jpeg">
+        <img class = "img1" src="{{ url_for('static', filename='turistsida-static/assets/img/landmarks.jpeg') }}">
         <div class="intro">
             <h1 class = "title">Välkommen till Mexico city</h1>
             <p class = "title-p">
@@ -31,16 +31,16 @@
             <div class = cover >
                 <div class = "scroll-images">
                     <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "../assets/img/main-natur.webp"> 
+                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-natur.webp') }}"> 
                     </div>
                     <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "../assets/img/main-slott.jpg"> 
+                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-slott.jpg') }}"> 
                     </div>
                     <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "../assets/img/pyramiderna.jpg"> 
+                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/pyramiderna.jpg') }}"> 
                     </div>
                     <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "../assets/img/main-natur.webp"> 
+                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-natur.webp') }}"> 
                     </div>
 
                 </div>
@@ -54,7 +54,7 @@
 
     <div id="footer"></div>
 
-    <script src = "../script.js"></script>
+    <script src="{{ url_for('static', filename='turistsida-static/script.js') }}"></script>
     
 </body>
 </html>
