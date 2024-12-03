@@ -106,6 +106,14 @@ class Routes():
     def turistsida():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/index.html')
 
+    @app.route('/Partials/footer', methods=['GET'])
+    def footer():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/Partials/footer.html')
+
+    @app.route('/Partials/navigation-bar', methods=['GET'])
+    def navigation():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/Partials/navigation-bar.html')
+
     @app.route('/skolarbete/programmering-1/bevy', methods=['POST'])
     def bevy():
         return render_template('/Skolarbete/Programmering 1/Bevy/bevy.html')

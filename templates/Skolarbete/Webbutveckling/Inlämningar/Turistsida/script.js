@@ -26,7 +26,7 @@ function scrollside(move_position) {
 document.addEventListener("DOMContentLoaded", () => {
     const footerContainer = document.getElementById('footer');
     
-    fetch('/Partials/footer.html')
+    fetch('/Partials/footer')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const footerContainer = document.getElementById('navigation-bar');
     
-    fetch('/Partials/navigation-bar.html')
+    fetch('/Partials/navigation-bar')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
