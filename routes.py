@@ -104,7 +104,7 @@ class Routes():
 
     @app.route('/skolarbete/webbutveckling/inlamningar/uppgifter/turistsida')
     def turistsida():
-        return render_template('/Skolarbete/Webbutveckling/Inlämningar/turistsida-mexico-city/index.html')
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/index.html')  
 
     @app.route('/skolarbete/programmering-1/bevy', methods=['POST'])
     def bevy():
