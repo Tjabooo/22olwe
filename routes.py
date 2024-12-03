@@ -102,6 +102,10 @@ class Routes():
     def kiwi():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/kiwi.html')
 
+    @app.route('/skolarbete/webbutveckling/inlamningar/uppgifter/turistsida')
+    def turistsida():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/turistsida-mexico-city/index.html')
+
     @app.route('/skolarbete/programmering-1/bevy', methods=['POST'])
     def bevy():
         return render_template('/Skolarbete/Programmering 1/Bevy/bevy.html')
