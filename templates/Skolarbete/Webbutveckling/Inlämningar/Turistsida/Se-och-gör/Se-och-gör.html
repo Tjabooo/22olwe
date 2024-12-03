@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se och gör</title>
+    <link rel="stylesheet" href="../styles.css">
+    <base href="/">
+</head>
+<body>
+    
+    <div id="navigation-bar"></div>
+
+    <div class= "image_holder">
+        <img class = "img1" src="../assets/img/landmarks.jpeg">
+        <div class="intro">
+            <h1 class = "title">Välkommen till Mexico city</h1>
+            <p class = "title-p">
+                Mexico City bjuder på historiska sevärdheter som Teotihuacáns pyramider <br>
+            och grönska i Chapultepec-parken samt naturskatter som vulkanen Popocatépetl.
+            </p>
+        </div>
+    </div>
+    
+    <div class = "zaza">
+       <br>
+       <br>
+       
+        <div class = "main-scroll-div">
+            <div><button  onclick ="scrollside(-200)" class = "scroll-side-button"><i class = "arrow-left"></i></button></div>
+            <div class = cover >
+                <div class = "scroll-images">
+                    <div class = "scroll-child"> 
+                        <img class = "scroll-child-img" src = "../assets/img/main-natur.webp"> 
+                    </div>
+                    <div class = "scroll-child"> 
+                        <img class = "scroll-child-img" src = "../assets/img/main-slott.jpg"> 
+                    </div>
+                    <div class = "scroll-child"> 
+                        <img class = "scroll-child-img" src = "../assets/img/pyramiderna.jpg"> 
+                    </div>
+                    <div class = "scroll-child"> 
+                        <img class = "scroll-child-img" src = "../assets/img/main-natur.webp"> 
+                    </div>
+
+                </div>
+            </div>
+            
+            <div><button onclick ="scrollside(200)" class = "scroll-side-button"><i class = "arrow-right"></i></button></div>
+        </div>
+    </div>
+
+    <div class="spacer" style="height: 10vh;"></div>
+
+    <div id="footer"></div>
+
+    <script src = "../script.js"></script>
+    
+</body>
+</html>
