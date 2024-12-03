@@ -102,7 +102,7 @@ class Routes():
     def kiwi():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/kiwi.html')
 
-    @app.route('/skolarbete/webbutveckling/inlamningar/turistsida')
+    @app.route('/skolarbete/webbutveckling/inlamningar/turistsida', methods=['POST'])
     def turistsida():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Turistsida/index.html')
 
