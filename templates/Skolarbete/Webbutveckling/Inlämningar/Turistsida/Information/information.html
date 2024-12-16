@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Information</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='turistsida-static/styles.css') }}">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
     <base href="/">
 </head>
 <body>
     <div id="navigation-bar"></div>
 
     <div class= "image_holder">
-        <img class = "img1" src="https://assets.editorial.aetnd.com/uploads/2009/11/Mexico-City-GettyImages-638921947.jpg">
+        <img class="img1" src="https://assets.editorial.aetnd.com/uploads/2009/11/Mexico-City-GettyImages-638921947.jpg">
         <div class="intro">
-            <h1 class = "title">Välkommen till Mexico city</h1>
-            <p class = "title-p">
+            <h1 class="title">Välkommen till Mexico city</h1>
+            <p class="title-p">
                 Mexico City är en vibrerande metropol där historia och modernitet möts.Här samsas antika <br>
                 ruiner och kolonial arkitektur med pulserande kulturkonst och kulinariska upplevelser.Staden <br>
                 erbjuder något för alla, från historiska sevärdheter till livliga marknader och gröna parker.
@@ -22,31 +22,30 @@
         </div>
     </div>
     
-    <div class = "zaza">
-        <br>
-        <br>
-        
-         <div class = "main-scroll-div">
-             <div><button  onclick ="scrollside(-200)" class = "scroll-side-button"><i class = "arrow-left"></i></button></div>
-             <div class = cover >
-                 <div class = "scroll-images">
-                     <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta1.jpg') }}"> 
-                     </div>
-                     <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta2.webp') }}"> 
-                     </div>
-                     <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta3.jpeg') }}"> 
-                     </div>
-                     <div class = "scroll-child"> 
-                         <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-fakta1.jpg') }}"> 
-                     </div>
- 
-                 </div>
-             </div>
+    <div>
+       <br>
+       <br>
+
+        <div class="main-scroll-div">
+            <div><button  onclick ="scrollside(-300)" class="scroll-side-button"><i class="arrow-left"></i></button></div>
+            <div class=cover >
+                <div class="scroll-images">
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://i.natgeofe.com/n/6c02ad5a-977b-4f12-b9c0-02ffb0736e07/metropolitan-cathedral-zocalo-mexico-city.JPG"> 
+                    </div>
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://ik.imgkit.net/3vlqs5axxjf/external/http://images.ntmllc.com/v4/destination/Mexico/Mexico-City/112092_SCN_MexicoCity_iStock628540524_Z42920.jpg?tr=w-1200%2Cfo-auto"> 
+                    </div>
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://assets.editorial.aetnd.com/uploads/2018/01/gettyimages-1048432478.jpg"> 
+                    </div>
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz6D2fDbhkFnw9mIb7XFGFua9YEuZoBmKMlw&s">
+                    </div>
+                </div>
+            </div>
             
-            <div><button onclick ="scrollside(300)" class = "scroll-side-button"><i class = "arrow-right"></i></button></div>
+            <div><button onclick ="scrollside(300)" class="scroll-side-button"><i class="arrow-right"></i></button></div>
         </div>
     </div>
     
@@ -54,7 +53,7 @@
 
     <div id="footer"></div>
 
-    <script src="{{ url_for('static', filename='turistsida-static/script.js') }}"></script>
+    <script src="../script.js"></script>
 
 </body>
 </html>

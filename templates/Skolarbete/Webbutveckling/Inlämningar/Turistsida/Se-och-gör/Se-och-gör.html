@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Se och gör</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='turistsida-static/styles.css') }}">
+    <link rel="stylesheet" href="../styles.css">
     <base href="/">
 </head>
 <body>
@@ -12,41 +12,41 @@
     <div id="navigation-bar"></div>
 
     <div class= "image_holder">
-        <img class = "img1" src="{{ url_for('static', filename='turistsida-static/assets/img/landmarks.jpeg') }}">
+        <img class="img1" src="../assets/img/landmarks.jpeg">
         <div class="intro">
-            <h1 class = "title">Välkommen till Mexico city</h1>
-            <p class = "title-p">
+            <h1 class="title">Välkommen till Mexico city</h1>
+            <p class="title-p">
                 Mexico City bjuder på historiska sevärdheter som Teotihuacáns pyramider <br>
             och grönska i Chapultepec-parken samt naturskatter som vulkanen Popocatépetl.
             </p>
         </div>
     </div>
     
-    <div class = "zaza">
+    <div class="zaza">
        <br>
        <br>
        
-        <div class = "main-scroll-div">
-            <div><button  onclick ="scrollside(-200)" class = "scroll-side-button"><i class = "arrow-left"></i></button></div>
-            <div class = cover >
-                <div class = "scroll-images">
-                    <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-natur.webp') }}"> 
+        <div class="main-scroll-div">
+            <div><button  onclick ="scrollside(-200)" class="scroll-side-button"><i class="arrow-left"></i></button></div>
+            <div class=cover >
+                <div class="scroll-images">
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://res.klook.com/image/upload/q_85/c_fill,w_563/activities/eafuaxhf09h7rynabxks.jpg"> 
                     </div>
-                    <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-slott.jpg') }}"> 
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://activityauthority.com/wp-content/uploads/2023/08/mexico-city-activities-teotihuacan-air-baloons.jpg"> 
                     </div>
-                    <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/pyramiderna.jpg') }}"> 
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://media.timeout.com/images/105514914/750/562/image.jpg"> 
                     </div>
-                    <div class = "scroll-child"> 
-                        <img class = "scroll-child-img" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-natur.webp') }}"> 
+                    <div class="scroll-child"> 
+                        <img class="scroll-child-img" src="https://images.squarespace-cdn.com/content/v1/5c8d51add74562eedd680e87/f68d3442-23f7-4732-a7c8-df350e104e97/fun3.jpeg"> 
                     </div>
 
                 </div>
             </div>
             
-            <div><button onclick ="scrollside(200)" class = "scroll-side-button"><i class = "arrow-right"></i></button></div>
+            <div><button onclick ="scrollside(200)" class="scroll-side-button"><i class="arrow-right"></i></button></div>
         </div>
     </div>
 
@@ -54,7 +54,7 @@
 
     <div id="footer"></div>
 
-    <script src="{{ url_for('static', filename='turistsida-static/script.js') }}"></script>
+    <script src="../script.js"></script>
     
 </body>
 </html>
