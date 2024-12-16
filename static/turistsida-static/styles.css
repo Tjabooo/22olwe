@@ -292,6 +292,7 @@ ul {
 
 .scroll-child-img:hover{
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .bottom-bar {

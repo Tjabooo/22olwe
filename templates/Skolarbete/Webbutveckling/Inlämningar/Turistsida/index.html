@@ -43,7 +43,7 @@
             Traditionella drycker som tequila och mezcal är populära, ofta tillsammans med läskande agua fresca eller horchata.
         </p>
         <div class = "images_container">
-            <a><img class = "show-img1 " src = "https://www.juanitas.com/wp-content/uploads/2023/09/blog-Fuego-Taco-Board.jpg"></a>
+            <a><img class = "show-img1 " src = "{{ url_for('static', filename='turistsida-static/assets/img/tacoboard.jpg') }}"></a>
             <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-mat2.jpg') }}"></a>
             <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/main-mat3.jpg') }}"></a>
         </div>
@@ -58,9 +58,9 @@
             En destination du inte får missa!
         </p>
         <div class = "images_container">
-            <a><img class = "show-img1" src = "https://media.istockphoto.com/id/1219898765/photo/mexico-city.jpg?s=612x612&w=0&k=20&c=Qs0WJ7OJ0joUWYdYTlQAnFur-t5qmPhB__DUK1zozZg="></a>
-            <a><img class = "show-img-other" src = "https://cdn.britannica.com/75/2575-050-EA228E6D/Mexico-map-features-locator.jpg"></a>
-            <a><img class = "show-img-other" src = "https://images.squarespace-cdn.com/content/v1/62e6911b53cc8f67eefc5fa6/cc253b08-5b71-491a-965f-11075a13dd4d/massacre.jpeg"></a>
+            <a><img class = "show-img1" src = "{{ url_for('static', filename='turistsida-static/assets/img/mainpalace.jpg') }}"></a>
+            <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/mexicomap.webp') }}"></a>
+            <a><img class = "show-img-other" src = "{{ url_for('static', filename='turistsida-static/assets/img/massacre.jpeg') }}"></a>
     </div>
     
     <button class="scroll-up-button" onclick="scrollToTop()"> <i class="arrow"></i></button>
