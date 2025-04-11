@@ -15,5 +15,5 @@ def main():
         port=constants.PORT,
         debug=True)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

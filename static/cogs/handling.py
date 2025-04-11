@@ -23,7 +23,7 @@ class LogicHandler():
     app=Flask(__name__,
                 static_folder=constants.STATIC_PATH,
                 template_folder=constants.TEMPLATES_PATH)
-    
+
     CORS(app)
 
     def update_times(self):
@@ -157,14 +157,14 @@ class LogicHandler():
                 tickets.append(ticket)
         ticket_data = '\n'.join(tickets)
         return ticket_data
-    
+
     def print_ticket(self):
         """
         Skriver ut biljetten utifrån biljett ID
         """
         dir = f'./{constants.TICKETS_PATH}'
         id = unquote(request.get_data())
-    
+
         ticket_data = None
         for ticket_name in os.listdir(dir):
             with open(file=f'{constants.TICKETS_PATH}/{ticket_name}', mode='r', encoding='utf-8') as ticket:
@@ -174,13 +174,13 @@ class LogicHandler():
                     break
                 else:
                     ticket_data = ''
-    
+
         if ticket_data:
             return { 'ticketData': ticket_data, 'statusCode': 200 }
         else:
             return { 'ticketData': ticket_data, 'statusCode': 204 }
 
-        
+
     def cancel_ticket(self):
         """
         Avbokar biljetten utifrån biljett ID

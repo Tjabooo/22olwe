@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='mainStyle.css') }}?v=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='yatzy/styles.css') }}?v=1">
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+</head>
+<body class="dark-mode">
+    <header>
+        <div class="back-button-container">
+            <button class="back-button" onclick="history.back()">
+                <img src="{{ url_for('static', filename='media/back.png') }}">
+            </button>
+        </div>
+        <h1>
+            <span class="special-char">~/</span>
+            Skolarbete
+            <span class="special-char">/</span>
+            Webbutveckling
+            <span class="special-char">/</span>
+            Inlämningar
+            <span class="special-char">/</span>
+            Yatzy
+        </h1>
+    </header>
+
+    <div class="game-wrapper">
+        <div class="game-board">
+            <div class="player-section player-1">
+                <div class="player-info player-1">
+                    <div class="player-circle"></div>
+                    <span>Spelare 1</span>
+                </div>
+                <div class="player-slots">
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                </div>
+            </div>
+            <div class="centre-wrapper">
+                <div class="dice-section">
+                    <img src="{{ url_for('static', filename='media/dice1.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='media/dice2.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='media/dice3.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='media/dice4.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='media/dice5.png') }}" class="dice">
+                </div>
+                <div class="rolls-remaining">Kast kvar: 3</div>
+                <div class="roll-button">Kasta tärningar</div>
+            </div>
+                <div class="player-section player-2">
+                <div class="player-slots">
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                    <div class="slot"></div>
+                </div>
+                <div class="player-info player-2">
+                    <div class="player-circle"></div>
+                    <span>Spelare 2</span>
+                </div>
+            </div>
+        </div>
+        <div class="scoreboard">
+            <div class="score-header">
+                <div></div>
+                <div>Player 1</div>
+                <div>Player 2</div>
+            </div>
+            <div class="score-row">
+                <div>Ettor</div>
+                <div class="player-1" id="ones"></div>
+                <div class="player-2" id="ones"></div>
+            </div>
+            <div class="score-row">
+                <div>Tvåor</div>
+                <div class="player-1" id="twos"></div>
+                <div class="player-2" id="twos"></div>
+            </div>
+            <div class="score-row">
+                <div>Treor</div>
+                <div class="player-1" id="threes"></div>
+                <div class="player-2" id="threes"></div>
+            </div>
+            <div class="score-row">
+                <div>Fyror</div>
+                <div class="player-1" id="fours"></div>
+                <div class="player-2" id="fours"></div>
+            </div>
+            <div class="score-row">
+                <div>Femmor</div>
+                <div class="player-1" id="fives"></div>
+                <div class="player-2" id="fives"></div>
+            </div>
+            <div class="score-row">
+                <div>Sexor</div>
+                <div class="player-1" id="sixes"></div>
+                <div class="player-2" id="sixes"></div>
+            </div>
+            <div class="score-row" id="sum">
+                <div>SUMMA</div>
+                <div class="player-1" id="sum"></div>
+                <div class="player-2" id="sum"></div>
+            </div>
+            <div class="score-row" id="special">
+                <div>BONUS</div>
+                <div class="player-1" id="bonus"></div>
+                <div class="player-2" id="bonus"></div>
+            </div>
+            <div class="score-row">
+                <div>Par</div>
+                <div class="player-1" id="pair"></div>
+                <div class="player-2" id="pair"></div>
+            </div>
+            <div class="score-row">
+                <div>Två Par</div>
+                <div class="player-1" id="two-pairs"></div>
+                <div class="player-2" id="two-pairs"></div>
+            </div>
+            <div class="score-row">
+                <div>Triss</div>
+                <div class="player-1" id="three-in-a-row"></div>
+                <div class="player-2" id="three-in-a-row"></div>
+            </div>
+            <div class="score-row">
+                <div>Fyrtal</div>
+                <div class="player-1" id="four-in-a-row"></div>
+                <div class="player-2" id="four-in-a-row"></div>
+            </div>
+            <div class="score-row">
+                <div>Kåk</div>
+                <div class="player-1" id="full-house"></div>
+                <div class="player-2" id="full-house"></div>
+            </div>
+            <div class="score-row">
+                <div>Liten stege</div>
+                <div class="player-1" id="small-straight"></div>
+                <div class="player-2" id="small-straight"></div>
+            </div>
+            <div class="score-row">
+                <div>Stor stege</div>
+                <div class="player-1" id="large-straight"></div>
+                <div class="player-2" id="large-straight"></div>
+            </div>
+            <div class="score-row">
+                <div>Chans</div>
+                <div class="player-1" id="chans"></div>
+                <div class="player-2" id="chans"></div>
+            </div>
+            <div class="score-row" id="special">
+                <div>YATZY</div>
+                <div class="player-1" id="yatzy"></div>
+                <div class="player-2" id="yatzy"></div>
+            </div>
+            <div class="score-row" id="sum">
+                <div>TOTAL</div>
+                <div class="player-1" id="total"></div>
+                <div class="player-2" id="total"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

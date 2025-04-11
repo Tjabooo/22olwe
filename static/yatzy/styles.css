@@ -1,0 +1,155 @@
+.game-wrapper {
+    display: flex;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.game-board {
+    width: 661px;
+    height: 661px;
+    background: linear-gradient(#0b6623, #0b802a, #0b6623);
+    margin-right: 20px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.player-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.player-info.player-1 {
+    margin-bottom: 20px;
+}
+
+.player-info.player-2 {
+    margin-top: 20px;
+}
+
+.player-circle {
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.player-slots {
+    display: flex;
+    gap: 10px;
+}
+
+.slot {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.dice-section {
+    display: flex;
+    gap: 15px;
+}
+
+.dice {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.roll-button {
+    background-color: mediumturquoise;
+    color: black;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid black;
+
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rolls-remaining {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 5px;
+}
+
+.roll-button:hover {
+    background-color: paleturquoise;
+}
+
+.scoreboard {
+    width: 300px;
+    height: 700px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.score-row {
+    display: flex;
+    flex: 1;
+    border-bottom: 1px solid black;
+    color: black;
+    font-size: 14px;
+}
+
+.score-row div {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-row div:last-child {
+    border-right: none;
+}
+
+#sum.score-row {
+    font-weight: bold;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+}
+
+#special.score-row {
+    font-weight: bold;
+}
+
+.score-header {
+    display: flex;
+    border-bottom: 2px solid black;
+    color: black;
+}
+.score-header div {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    border-right: 1px solid black;
+    background-color: lightgray;
+}
+.score-header div:last-child {
+    border-right: none;
+}

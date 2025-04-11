@@ -14,34 +14,35 @@ class Routes():
 
     app = Flask(__name__,
                     static_folder=constants.STATIC_PATH,
-                    template_folder=constants.TEMPLATES_PATH)
+                    template_folder=constants.TEMPLATES_PATH
+    )
 
     CORS(app)
 
     @app.route('/')
     def landing_page():
         return render_template('landing_page.html')
-    
+
     @app.route('/ldr-rating', methods=['POST'])
     def ldr_rating():
         return render_template('/LDR/ldr-rating.html')
-    
+
     @app.route('/skolarbete', methods=['POST'])
     def skolprojekt():
         return render_template('/Skolarbete/skolarbete.html')
-    
+
     @app.route('/skolarbete/programmering-1', methods=['POST'])
     def programmering_1():
         return render_template('/Skolarbete/Programmering 1/prog1.html')
-    
+
     @app.route('/skolarbete/webbutveckling', methods=['POST'])
     def webbutveckling():
         return render_template('/Skolarbete/Webbutveckling/webbutveckling.html')
-        
+
     @app.route('/skolarbete/webbutveckling/html-intro', methods=['POST'])
     def html_intro():
-        return render_template('/Skolarbete/Webbutveckling/HTML/html-intro.html')    
-    
+        return render_template('/Skolarbete/Webbutveckling/HTML/html-intro.html')
+
     @app.route('/skolarbete/webbutveckling/html-intro/html-uppgift-1', methods=['POST'])
     def html_uppgift_1():
         return render_template('/Skolarbete/Webbutveckling/HTML/Uppgifter/html-uppgift-1.html')
@@ -49,7 +50,7 @@ class Routes():
     @app.route('/skolarbete/webbutveckling/html-intro/html-uppgift-2', methods=['POST'])
     def html_uppgift_2():
         return render_template('/Skolarbete/Webbutveckling/HTML/Uppgifter/html-uppgift-2.html')
-    
+
     @app.route('/skolarbete/webbutveckling/html-intro/html-uppgift-3', methods=['POST'])
     def html_uppgift_3():
         return render_template('/Skolarbete/Webbutveckling/HTML/Uppgifter/html-uppgift-3.html')
@@ -57,7 +58,7 @@ class Routes():
     @app.route('/skolarbete/webbutveckling/html-intro/html-uppgift-4', methods=['POST'])
     def html_uppgift_4():
         return render_template('/Skolarbete/Webbutveckling/HTML/Uppgifter/html-uppgift-4.html')
-    
+
     @app.route('/skolarbete/webbutveckling/html-intro/html-uppgift-5', methods=['POST'])
     def html_uppgift_5():
         return render_template('/Skolarbete/Webbutveckling/HTML/Uppgifter/html-uppgift-5.html')
@@ -65,11 +66,11 @@ class Routes():
     @app.route('/skolarbete/webbutveckling/html-intro/html-uppgift-6', methods=['POST'])
     def html_uppgift_6():
         return render_template('/Skolarbete/Webbutveckling/HTML/Uppgifter/html-uppgift-6.html')
-        
+
     @app.route('/skolarbete/webbutveckling/css-intro', methods=['POST'], strict_slashes=False)
     def css_intro():
         return render_template('/Skolarbete/Webbutveckling/CSS/css-intro.html')
-    
+
     @app.route('/skolarbete/webbutveckling/css-intro/css-uppgift-1', methods=['POST'])
     def css_uppgift_1():
         return render_template('/Skolarbete/Webbutveckling/CSS/Uppgifter/css-uppgift-1.html')
@@ -81,11 +82,15 @@ class Routes():
     @app.route('/skolarbete/webbutveckling/inlamningar', methods=['POST'])
     def inlamningar():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/inlamningar.html')
-    
+
+    @app.route('/skolarbete/webbutveckling/inlamningar/yatzy', methods=['POST', 'GET'])
+    def yatzy():
+        return render_template('/Skolarbete/Webbutveckling/Inlämningar/Yatzy/index.html')
+
     @app.route('/skolarbete/webbutveckling/inlamningar/boxmodellen', methods=['POST', 'GET'])
     def boxmodellen():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/boxmodellen.html')
-    
+
     @app.route('/skolarbete/webbutveckling/inlamningar/frukttabell', methods=['POST', 'GET'])
     def frukttabell():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/frukttabell.html')
@@ -97,7 +102,7 @@ class Routes():
     @app.route('/skolarbete/webbutveckling/inlamningar/uppgifter/apelsin')
     def apelsin():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/apelsin.html')
-    
+
     @app.route('/skolarbete/webbutveckling/inlamningar/uppgifter/kiwi')
     def kiwi():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/Uppgifter/kiwi.html')
@@ -133,7 +138,7 @@ class Routes():
     @app.route('/skolarbete/programmering-1/platsbokning', methods=['POST'])
     def platsbokning():
         return render_template('/Skolarbete/Programmering 1/SJ Platsbokning/platsbokning.html')
-    
+
     @app.route('/skolarbete/programmering-1/platsbokning/book_ticket', methods=['POST'])
     def book_ticket():
         return render_template('/Skolarbete/Programmering 1/SJ Platsbokning/book.html')
@@ -153,7 +158,7 @@ class Routes():
         if request.method == 'POST':
             response = LogicHandler().update_times()
         return jsonify(response)
-    
+
     @app.route('/skolarbete/programmering-1/platsbokning/get_seats', methods=['POST'])
     def get_seats():
         if request.method == 'POST':
@@ -165,13 +170,13 @@ class Routes():
         if request.method == 'GET':
             response = LogicHandler().get_cities()
         return jsonify(response)
-    
+
     @app.route('/skolarbete/programmering-1/platsbokning/print_ticket', methods=['POST'])
     def print_ticket():
         if request.method == 'POST':
             response = LogicHandler().print_ticket()
         return response
-    
+
     @app.route('/skolarbete/programmering-1/platsbokning/cancel_ticket', methods=['POST'])
     def cancel_ticket():
         if request.method == 'POST':

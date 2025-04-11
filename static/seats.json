@@ -541,9 +541,9 @@
       "31": false
     },
     "08:55": {
-      "departure": "",
-      "destination": "",
-      "date": "",
+      "departure": "Stockholm",
+      "destination": "G\u00f6teborg",
+      "date": "30/Mar/2025",
       "train_id": 554,
       "0": false,
       "1": false,
@@ -565,7 +565,7 @@
       "17": false,
       "18": false,
       "19": false,
-      "20": false,
+      "20": true,
       "21": false,
       "22": false,
       "23": false,
