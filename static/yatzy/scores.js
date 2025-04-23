@@ -43,38 +43,45 @@ const playerElements = {
   },
 };
 
+function setScoreIfNotSaved(element, value) {
+  if (!element.classList.contains("saved")) {
+    element.innerHTML = value > 0 ? value : '';
+  }
+  return;
+}
+
 const getCurrentPlayerElements = (currentPlayer) => {
   player = currentPlayer === 1 ? playerElements.player1 : playerElements.player2;
 };
 
 function calculateOnes(dice) {
   let sum = dice.filter(d => d === 1).length;
-  player.ones.innerHTML = sum > 0 ? sum : '';
+  setScoreIfNotSaved(player.ones, sum);
 }
 
 function calculateTwos(dice) {
   let sum = dice.filter(d => d === 2).length * 2;
-  player.twos.innerHTML = sum > 0 ? sum : '';
+  setScoreIfNotSaved(player.twos, sum);
 }
 
 function calculateThrees(dice) {
   let sum = dice.filter(d => d === 3).length * 3;
-  player.threes.innerHTML = sum > 0 ? sum : '';
+  setScoreIfNotSaved(player.threes, sum);
 }
 
 function calculateFours(dice) {
   let sum = dice.filter(d => d === 4).length * 4;
-  player.fours.innerHTML = sum > 0 ? sum : '';
+  setScoreIfNotSaved(player.fours, sum);
 }
 
 function calculateFives(dice) {
   let sum = dice.filter(d => d === 5).length * 5;
-  player.fives.innerHTML = sum > 0 ? sum : '';
+  setScoreIfNotSaved(player.fives, sum);
 }
 
 function calculateSixes(dice) {
   let sum = dice.filter(d => d === 6).length * 6;
-  player.sixes.innerHTML = sum > 0 ? sum : '';
+  setScoreIfNotSaved(player.sixes, sum);
 }
 
 function calculateBonus(dice) {
@@ -84,7 +91,7 @@ function calculateBonus(dice) {
       sum += dice[i];
     }
   }
-  player.bonus.innerHTML = sum >= 63 ? 50 : '';
+  setScoreIfNotSaved(player.bonus, sum >= 63 ? 50 : '');
 }
 
 function calculatePair(dice) {
@@ -94,25 +101,28 @@ function calculatePair(dice) {
   }
   for (let i = 1; i <= 6; i++) {
     if (counts[i] >= 2) {
-      player.pair.innerHTML = i * 2;
+      setScoreIfNotSaved(player.pair, i * 2);
       return;
     }
   }
-  player.pair.innerHTML = '';
+  setScoreIfNotSaved(player.pair, '');
 }
 
+// Function to check for double pairs and add them together
 function calculateTwoPairs(dice) {
   let counts = new Array(7).fill(0);
   for (let i = 0; i < dice.length; i++) {
     counts[dice[i]]++;
   }
   let pairs = 0;
+  let sum = 0;
   for (let i = 1; i <= 6; i++) {
     if (counts[i] >= 2) {
       pairs++;
+      sum += i * 2;
     }
   }
-  player.twoPairs.innerHTML = pairs === 2 ? 4 * 2 : '';
+  setScoreIfNotSaved(player.twoPairs, pairs === 2 ? sum : '');
 }
 
 function calculateThreeOfAKind(dice) {
@@ -122,11 +132,11 @@ function calculateThreeOfAKind(dice) {
   }
   for (let i = 1; i <= 6; i++) {
     if (counts[i] >= 3) {
-      player.threeOfAKind.innerHTML = i * 3;
+      setScoreIfNotSaved(player.threeOfAKind, i * 3);
       return;
     }
   }
-  player.threeOfAKind.innerHTML = '';
+  setScoreIfNotSaved(player.threeOfAKind, '');
   return;
 }
 
@@ -137,11 +147,11 @@ function calculateFourOfAKind(dice) {
   }
   for (let i = 1; i <= 6; i++) {
     if (counts[i] >= 4) {
-      player.fourOfAKind.innerHTML = i * 4;
+      setScoreIfNotSaved(player.fourOfAKind, i * 4);
       return;
     }
   }
-  player.fourOfAKind.innerHTML = '';
+  setScoreIfNotSaved(player.fourOfAKind, '');
 }
 
 function calculateFullHouse(dice) {
@@ -162,7 +172,7 @@ function calculateFullHouse(dice) {
   dice.forEach(value =>
     sum += value
   );
-  player.fullHouse.innerHTML = pair && three ? sum : '';
+  setScoreIfNotSaved(player.fullHouse, pair && three ? sum : '');
   return;
 }
 
@@ -177,8 +187,8 @@ function calculateSmallStraight(dice) {
       straight = false;
     }
   }
-  player.smallStraight.innerHTML = straight ? 15 : '';
-  return
+  setScoreIfNotSaved(player.smallStraight, straight ? 15 : '');
+  return;
 }
 
 function calculateLargeStraight(dice) {
@@ -192,7 +202,7 @@ function calculateLargeStraight(dice) {
       straight = false;
     }
   }
-  player.largeStraight.innerHTML = straight ? 20 : '';
+  setScoreIfNotSaved(player.largeStraight, straight ? 20 : '');
   return;
 }
 
@@ -201,7 +211,7 @@ function calculateChance(dice) {
   for (let i = 0; i < dice.length; i++) {
     sum += dice[i];
   }
-  player.chance.innerHTML = sum;
+  setScoreIfNotSaved(player.chance, sum);
   return;
 }
 
@@ -212,12 +222,12 @@ function calculateYahtzee(dice) {
   }
   for (let i = 1; i <= 6; i++) {
     if (counts[i] === 5) {
-      player.yahtzee.innerHTML = 50;
+      setScoreIfNotSaved(player.yahtzee, 50);
       return;
     }
   }
-  player.yahtzee.innerHTML = '';
-  return
+  setScoreIfNotSaved(player.yahtzee, '');
+  return;
 }
 
 function calculateTotal() {

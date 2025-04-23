@@ -25,11 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
       2: {}
     };
     function attachScoreListeners() {
-      const scoreCells = document.querySelectorAll(`.score-cell.player-${currentPlayer}:not(.saved)`);
+      const scoreCells = document.querySelectorAll(`.score-cell.player-${currentPlayer}`);
       scoreCells.forEach(cell => {
-        const newCell = cell.cloneNode(true);
-        cell.replaceWith(newCell);
-        newCell.addEventListener("click", saveScore, { once: true });
+        if (!cell.classList.contains("saved") && !cell.dataset.listenerAttached) {
+          cell.addEventListener("click", saveScore, { once: true });
+          cell.dataset.listenerAttached = "true";
+        }
       });
     }
 
@@ -58,24 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function resetForNextPlayer() {
-        rollsRemaining = 3;
-        updateRollsRemaining();
-        currentDiceValues = [1, 1, 1, 1, 1];
-        lockedDice = [false, false, false, false, false];
-
-        diceElements.forEach((die, index) => {
-            die.src = diceImages[0];
-            die.classList.remove("locked");
-            die.style.opacity = "1";
+      Object.values(playerSlots).forEach(slotsArray => {
+        slotsArray.forEach(slot => {
+          slot.innerHTML = '';
         });
+      });
 
-        // const slots = playerSlots[currentPlayer];
-        // slots.forEach(slot => {
-        //     while (slot.firstChild) {
-        //         slot.removeChild(slot.firstChild);
-        //     }
-        //   slot.style.border = "1px solid black";
-        // });
+      document.querySelectorAll('.score-cell').forEach(cell => {
+        if (!cell.classList.contains('saved')) {
+          cell.textContent = '';
+          delete cell.dataset.listenerAttached;
+        }
+      });
+
+      rollsRemaining = 3;
+      updateRollsRemaining();
+      currentDiceValues = [1, 1, 1, 1, 1];
+      lockedDice = [false, false, false, false, false];
+
+      diceElements.forEach((die, index) => {
+        die.src = diceImages[0];
+        die.classList.remove("locked");
+        die.style.opacity = "1";
+      });
     }
 
     function saveScore(event) {
@@ -94,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       target.classList.add("saved");
       target.style.backgroundColor = "#ccc";
+      target.removeEventListener("click", saveScore);
 
       switchPlayer();
     }
