@@ -95,11 +95,9 @@ function calculateBonus(dice) {
 }
 
 function calculatePair(dice) {
-  let counts = new Array(7).fill(0);
-  for (let i = 0; i < dice.length; i++) {
-    counts[dice[i]]++;
-  }
-  for (let i = 1; i <= 6; i++) {
+  const counts = new Array(7).fill(0);
+  dice.forEach(d => counts[d]++);
+  for (let i = 6; i >= 1; i--) {
     if (counts[i] >= 2) {
       setScoreIfNotSaved(player.pair, i * 2);
       return;
@@ -108,21 +106,20 @@ function calculatePair(dice) {
   setScoreIfNotSaved(player.pair, '');
 }
 
-// Function to check for double pairs and add them together
 function calculateTwoPairs(dice) {
-  let counts = new Array(7).fill(0);
-  for (let i = 0; i < dice.length; i++) {
-    counts[dice[i]]++;
-  }
-  let pairs = 0;
-  let sum = 0;
-  for (let i = 1; i <= 6; i++) {
+  const counts = new Array(7).fill(0);
+  dice.forEach(d => counts[d]++);
+  const pairs = [];
+  for (let i = 6; i >= 1; i--) {
     if (counts[i] >= 2) {
-      pairs++;
-      sum += i * 2;
+      pairs.push(i);
+      if (pairs.length === 2) {
+        setScoreIfNotSaved(player.twoPairs, pairs[0] * 2 + pairs[1] * 2);
+        return;
+      }
     }
   }
-  setScoreIfNotSaved(player.twoPairs, pairs === 2 ? sum : '');
+  setScoreIfNotSaved(player.twoPairs, '');
 }
 
 function calculateThreeOfAKind(dice) {
@@ -230,8 +227,15 @@ function calculateYahtzee(dice) {
   return;
 }
 
-function calculateTotal() {
-  // code
+export function calculateTotal(currentPlayer) {
+  let totalScore = 0;
+  document.querySelectorAll(`.score-cell.player-${currentPlayer}`).forEach(cell => {
+    if (cell.classList.contains('saved')) {
+      const value = parseInt(cell.textContent);
+      totalScore += value;
+    }
+  });
+  setScoreIfNotSaved(player.total, totalScore);
 }
 
 export function runCalculations(dice, currentPlayer) {
@@ -252,5 +256,4 @@ export function runCalculations(dice, currentPlayer) {
   calculateLargeStraight(dice)
   calculateChance(dice)
   calculateYahtzee(dice)
-  calculateTotal()
 }

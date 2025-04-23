@@ -1,13 +1,13 @@
-import { runCalculations } from './scores.js';
+import { runCalculations, calculateTotal } from './scores.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     const diceImages = [
-        "http://192.168.49.145:8000/static/yatzy/assets/dice1.png",
-        "http://192.168.49.145:8000/static/yatzy/assets/dice2.png",
-        "http://192.168.49.145:8000/static/yatzy/assets/dice3.png",
-        "http://192.168.49.145:8000/static/yatzy/assets/dice4.png",
-        "http://192.168.49.145:8000/static/yatzy/assets/dice5.png",
-        "http://192.168.49.145:8000/static/yatzy/assets/dice6.png"
+        "http://192.168.1.210:8000/static/yatzy/assets/dice1.png",
+        "http://192.168.1.210:8000/static/yatzy/assets/dice2.png",
+        "http://192.168.1.210:8000/static/yatzy/assets/dice3.png",
+        "http://192.168.1.210:8000/static/yatzy/assets/dice4.png",
+        "http://192.168.1.210:8000/static/yatzy/assets/dice5.png",
+        "http://192.168.1.210:8000/static/yatzy/assets/dice6.png"
     ];
 
     const rollButton = document.querySelector(".roll-button");
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let rollsRemaining = 3;
+    let hasRolled = false;
     let currentPlayer = 1;
     let currentDiceValues = [1, 1, 1, 1, 1];
     let lockedDice = [false, false, false, false, false];
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
           diceElements[index].src = diceImages[value - 1];
       });
 
+      hasRolled = true;
       runCalculations(currentDiceValues, currentPlayer);
     }
 
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       Object.values(playerSlots).forEach(slotsArray => {
         slotsArray.forEach(slot => {
           slot.innerHTML = '';
+          slot.style.border = "2px solid black";
         });
       });
 
@@ -72,8 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
+      const activePlayerInfo = document.querySelector(`.player-info.player-${currentPlayer}`);
+      activePlayerInfo.style.color = "#FFD700";
+      activePlayerInfo.style.textShadow = "0 0 8px #FFD700";
+      activePlayerInfo.style.fontWeight = "bold";
+      activePlayerInfo.style.textDecoration = "underline";
+
+      const inactivePlayerInfo = document.querySelector(`.player-info.player-${currentPlayer % 2 + 1}`);
+      inactivePlayerInfo.style.color = "white";
+      inactivePlayerInfo.style.textShadow = "none";
+      inactivePlayerInfo.style.fontWeight = "normal";
+      inactivePlayerInfo.style.textDecoration = "none";
+
       rollsRemaining = 3;
       updateRollsRemaining();
+      hasRolled = false;
       currentDiceValues = [1, 1, 1, 1, 1];
       lockedDice = [false, false, false, false, false];
 
@@ -85,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function saveScore(event) {
-      console.log("Saving score");
       const target = event.target;
       const category = target.dataset.category;
 
@@ -95,20 +110,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const score = target.textContent.trim();
       if (score === "") {
-        return;
+        const confirmZero = confirm("Är du säker på att du vill spara 0 poäng?");
+        if (!confirmZero) return;
+
+        target.textContent = "0";
       }
 
       target.classList.add("saved");
       target.style.backgroundColor = "#ccc";
       target.removeEventListener("click", saveScore);
 
+      ensureAllScoresFilled();
       switchPlayer();
     }
 
     function switchPlayer() {
-      currentPlayer = currentPlayer === 1 ? 2 : 1;
+      currentPlayer = currentPlayer % 2 + 1;
       resetForNextPlayer();
-      alert(`Nu är det Spelare ${currentPlayer} tur!`);
     }
 
     function saveDie(index) {
@@ -172,11 +190,16 @@ document.addEventListener("DOMContentLoaded", () => {
             updateRollsRemaining();
 
             if (rollsRemaining < 3) {
-              console.log("Attached score listeners");
               attachScoreListeners();
             }
         }
     });
+
+    function ensureAllScoresFilled() {
+      const scoreCells = document.querySelectorAll(`.score-cell.player-${currentPlayer}`);
+      const allSaved = Array.from(scoreCells).every(cell => cell.classList.contains('saved'));
+      if (allSaved) calculateTotal(currentPlayer);
+    }
 
     updateRollsRemaining();
 });

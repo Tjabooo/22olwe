@@ -31,7 +31,7 @@
         <div class="game-board">
             <div class="player-section player-1">
                 <div class="player-info player-1">
-                    <div class="player-circle"></div>
+                    <!-- <div class="player-circle"></div> -->
                     <span>Spelare 1</span>
                 </div>
                 <div class="player-slots">
@@ -45,10 +45,10 @@
             <div class="centre-wrapper">
                 <div class="dice-section">
                     <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice2.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice3.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice4.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice5.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
                 </div>
                 <div class="rolls-remaining">Kast kvar: 3</div>
                 <div class="roll-button">Kasta tärningar</div>
@@ -62,7 +62,7 @@
                     <div class="slot"></div>
                 </div>
                 <div class="player-info player-2">
-                    <div class="player-circle"></div>
+                    <!-- <div class="player-circle"></div> -->
                     <span>Spelare 2</span>
                 </div>
             </div>
@@ -160,8 +160,8 @@
             </div>
             <div class="score-row" id="sum">
                 <div>TOTAL</div>
-                <div class="score-cell player-1" id="player1-total"></div>
-                <div class="score-cell player-2" id="player2-total"></div>
+                <div id="player1-total"></div>
+                <div id="player2-total"></div>
             </div>
         </div>
     </div>
