@@ -2,12 +2,12 @@ import { runCalculations, calculateTotal } from './scores.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     const diceImages = [
-        "http://192.168.1.210:8000/static/yatzy/assets/dice1.png",
-        "http://192.168.1.210:8000/static/yatzy/assets/dice2.png",
-        "http://192.168.1.210:8000/static/yatzy/assets/dice3.png",
-        "http://192.168.1.210:8000/static/yatzy/assets/dice4.png",
-        "http://192.168.1.210:8000/static/yatzy/assets/dice5.png",
-        "http://192.168.1.210:8000/static/yatzy/assets/dice6.png"
+        "http://22olwe.ssis.nu/static/yatzy/assets/dice1.png",
+        "http://22olwe.ssis.nu/static/yatzy/assets/dice2.png",
+        "http://22olwe.ssis.nu/static/yatzy/assets/dice3.png",
+        "http://22olwe.ssis.nu/static/yatzy/assets/dice4.png",
+        "http://22olwe.ssis.nu/static/yatzy/assets/dice5.png",
+        "http://22olwe.ssis.nu/static/yatzy/assets/dice6.png"
     ];
 
     const rollButton = document.querySelector(".roll-button");
