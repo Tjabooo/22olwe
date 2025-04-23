@@ -44,11 +44,11 @@
             </div>
             <div class="centre-wrapper">
                 <div class="dice-section">
-                    <img src="{{ url_for('static', filename='media/dice1.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='media/dice2.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='media/dice3.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='media/dice4.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='media/dice5.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice2.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice3.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice4.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice5.png') }}" class="dice">
                 </div>
                 <div class="rolls-remaining">Kast kvar: 3</div>
                 <div class="roll-button">Kasta tärningar</div>
@@ -75,97 +75,98 @@
             </div>
             <div class="score-row">
                 <div>Ettor</div>
-                <div class="player-1" id="player1-ones"></div>
-                <div class="player-2" id="player2-ones"></div>
+                <div class="score-cell player-1" id="player1-ones"></div>
+                <div class="score-cell player-2" id="player2-ones"></div>
             </div>
             <div class="score-row">
                 <div>Tvåor</div>
-                <div class="player-1" id="player1-twos"></div>
-                <div class="player-2" id="player2-twos"></div>
+                <div class="score-cell player-1" id="player1-twos"></div>
+                <div class="score-cell player-2" id="player2-twos"></div>
             </div>
             <div class="score-row">
                 <div>Treor</div>
-                <div class="player-1" id="player1-threes"></div>
-                <div class="player-2" id="player2-threes"></div>
+                <div class="score-cell player-1" id="player1-threes"></div>
+                <div class="score-cell player-2" id="player2-threes"></div>
             </div>
             <div class="score-row">
                 <div>Fyror</div>
-                <div class="player-1" id="player1-fours"></div>
-                <div class="player-2" id="player2-fours"></div>
+                <div class="score-cell player-1" id="player1-fours"></div>
+                <div class="score-cell player-2" id="player2-fours"></div>
             </div>
             <div class="score-row">
                 <div>Femmor</div>
-                <div class="player-1" id="player1-fives"></div>
-                <div class="player-2" id="player2-fives"></div>
+                <div class="score-cell player-1" id="player1-fives"></div>
+                <div class="score-cell player-2" id="player2-fives"></div>
             </div>
             <div class="score-row">
                 <div>Sexor</div>
-                <div class="player-1" id="player1-sixes"></div>
-                <div class="player-2" id="player2-sixes"></div>
+                <div class="score-cell player-1" id="player1-sixes"></div>
+                <div class="score-cell player-2" id="player2-sixes"></div>
             </div>
             <div class="score-row sum">
                 <div>SUMMA</div>
-                <div class="player-1" id="player1-sum"></div>
-                <div class="player-2" id="player2-sum"></div>
+                <div class="score-cell player-1" id="player1-sum"></div>
+                <div class="score-cell player-2" id="player2-sum"></div>
             </div>
             <div class="score-row special">
                 <div>BONUS</div>
-                <div class="player-1" id="player1-bonus"></div>
-                <div class="player-2" id="player2-bonus"></div>
+                <div class="score-cell player-1" id="player1-bonus"></div>
+                <div class="score-cell player-2" id="player2-bonus"></div>
             </div>
             <div class="score-row">
                 <div>Par</div>
-                <div class="player-1" id="player1-pair"></div>
-                <div class="player-2" id="player2-pair"></div>
+                <div class="score-cell player-1" id="player1-pair"></div>
+                <div class="score-cell player-2" id="player2-pair"></div>
             </div>
             <div class="score-row">
                 <div>Två Par</div>
-                <div class="player-1" id="player1-two-pairs"></div>
-                <div class="player-2" id="player2-two-pairs"></div>
+                <div class="score-cell player-1" id="player1-two-pairs"></div>
+                <div class="score-cell player-2" id="player2-two-pairs"></div>
             </div>
             <div class="score-row">
                 <div>Triss</div>
-                <div class="player-1" id="player1-three-in-a-row"></div>
-                <div class="player-2" id="player2-three-in-a-row"></div>
+                <div class="score-cell player-1" id="player1-three-of-a-kind"></div>
+                <div class="score-cell player-2" id="player2-three-of-a-kind"></div>
             </div>
             <div class="score-row">
                 <div>Fyrtal</div>
-                <div class="player-1" id="player1-four-in-a-row"></div>
-                <div class="player-2" id="player2-four-in-a-row"></div>
+                <div class="score-cell player-1" id="player1-four-of-a-kind"></div>
+                <div class="score-cell player-2" id="player2-four-of-a-kind"></div>
             </div>
             <div class="score-row">
                 <div>Kåk</div>
-                <div class="player-1" id="player1-full-house"></div>
-                <div class="player-2" id="player2-full-house"></div>
+                <div class="score-cell player-1" id="player1-full-house"></div>
+                <div class="score-cell player-2" id="player2-full-house"></div>
             </div>
             <div class="score-row">
                 <div>Liten stege</div>
-                <div class="player-1" id="player1-small-straight"></div>
-                <div class="player-2" id="player2-small-straight"></div>
+                <div class="score-cell player-1" id="player1-small-straight"></div>
+                <div class="score-cell player-2" id="player2-small-straight"></div>
             </div>
             <div class="score-row">
                 <div>Stor stege</div>
-                <div class="player-1" id="player1-large-straight"></div>
-                <div class="player-2" id="player2-large-straight"></div>
+                <div class="score-cell player-1" id="player1-large-straight"></div>
+                <div class="score-cell player-2" id="player2-large-straight"></div>
             </div>
             <div class="score-row">
                 <div>Chans</div>
-                <div class="player-1" id="player1-chans"></div>
-                <div class="player-2" id="player2-chans"></div>
+                <div class="score-cell player-1" id="player1-chance"></div>
+                <div class="score-cell player-2" id="player2-chance"></div>
             </div>
             <div class="score-row special">
                 <div>YATZY</div>
-                <div class="player-1" id="player1-yatzy"></div>
-                <div class="player-2" id="player2-yatzy"></div>
+                <div class="score-cell player-1" id="player1-yahtzee"></div>
+                <div class="score-cell player-2" id="player2-yahtzee"></div>
             </div>
             <div class="score-row" id="sum">
                 <div>TOTAL</div>
-                <div class="player-1" id="player1-total"></div>
-                <div class="player-2" id="player2-total"></div>
+                <div class="score-cell player-1" id="player1-total"></div>
+                <div class="score-cell player-2" id="player2-total"></div>
             </div>
         </div>
     </div>
 
-    <script src="{{ url_for('static', filename='yatzy/script.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='yatzy/script.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='yatzy/scores.js') }}"></script>
 </body>
 </html>

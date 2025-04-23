@@ -160,6 +160,11 @@
     font-weight: bold;
 }
 
+.score-cell.saved {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 .score-header {
     display: flex;
     border-bottom: 2px solid black;
