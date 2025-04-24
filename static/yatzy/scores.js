@@ -8,7 +8,7 @@ const playerElements = {
     fours: document.getElementById('player1-fours'),
     fives: document.getElementById('player1-fives'),
     sixes: document.getElementById('player1-sixes'),
-    sum: document.getElementById('player1-total'),
+    // sum: document.getElementById('player1-sum'),
     bonus: document.getElementById('player1-bonus'),
     pair: document.getElementById('player1-pair'),
     twoPairs: document.getElementById('player1-two-pairs'),
@@ -28,7 +28,7 @@ const playerElements = {
     fours: document.getElementById('player2-fours'),
     fives: document.getElementById('player2-fives'),
     sixes: document.getElementById('player2-sixes'),
-    sum: document.getElementById('player2-total'),
+    // sum: document.getElementById('player2-sum'),
     bonus: document.getElementById('player2-bonus'),
     pair: document.getElementById('player2-pair'),
     twoPairs: document.getElementById('player2-two-pairs'),
@@ -84,14 +84,17 @@ function calculateSixes(dice) {
   setScoreIfNotSaved(player.sixes, sum);
 }
 
-function calculateBonus(dice) {
-  let sum = 0;
-  for (let i = 0; i < dice.length; i++) {
-    if (dice[i] >= 1 && dice[i] <= 6) {
-      sum += dice[i];
-    }
-  }
-  setScoreIfNotSaved(player.bonus, sum >= 63 ? 50 : '');
+export function calculateBonus() {
+  const upperSection = [player.ones, player.twos, player.threes, player.fours, player.fives, player.sixes];
+  let allSaved = upperSection.every(cell => cell.classList.contains('saved'));
+  if (!allSaved) return;
+  let totalScore = 0;
+  upperSection.forEach(cell => {
+    const value = parseInt(cell.textContent);
+    totalScore += value;
+  });
+  player.bonus.textContent = totalScore >= 63 ? 50 : 0;
+  player.bonus.classList.add('saved');
 }
 
 function calculatePair(dice) {
@@ -246,7 +249,6 @@ export function runCalculations(dice, currentPlayer) {
   calculateFours(dice)
   calculateFives(dice)
   calculateSixes(dice)
-  calculateBonus(dice)
   calculatePair(dice)
   calculateTwoPairs(dice)
   calculateThreeOfAKind(dice)

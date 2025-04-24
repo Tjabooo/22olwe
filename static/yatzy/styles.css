@@ -154,9 +154,12 @@
     border-right: none;
 }
 
-.score-row.sum {
+.score-row.bonus, .score-row.total {
     font-weight: bold;
     border-top: 1px solid black;
+}
+
+.score-row.bonus {
     border-bottom: 2px solid black;
 }
 

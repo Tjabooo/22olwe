@@ -1,4 +1,8 @@
-import { runCalculations, calculateTotal } from './scores.js';
+import {
+  runCalculations,
+  calculateBonus,
+  calculateTotal
+} from './scores.js';
 
 document.addEventListener("DOMContentLoaded", () => {
     const diceImages = [
@@ -47,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function rollDice() {
       currentDiceValues = currentDiceValues.map((value, index) => {
           if (!lockedDice[index]) {
-              return Math.floor(Math.random() * 6) + 1;
+            return Math.floor(Math.random() * 6) + 1;
           }
           return value;
       });
@@ -121,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
       target.removeEventListener("click", saveScore);
 
       ensureAllScoresFilled();
+      calculateBonus();
       switchPlayer();
     }
 
@@ -196,9 +201,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function ensureAllScoresFilled() {
-      const scoreCells = document.querySelectorAll(`.score-cell.player-${currentPlayer}`);
-      const allSaved = Array.from(scoreCells).every(cell => cell.classList.contains('saved'));
-      if (allSaved) calculateTotal(currentPlayer);
+      const scoreCellsCurrent = document.querySelectorAll(`.score-cell.player-${currentPlayer}`);
+      const allSavedCurrent = Array.from(scoreCellsCurrent).every(cell => cell.classList.contains('saved'));
+      if (allSavedCurrent) {
+        calculateTotal(currentPlayer);
+      }
+      const scoreCellsPlayer1 = document.querySelectorAll(`.score-cell.player-1`);
+      const allSaved1 = Array.from(scoreCellsPlayer1).every(cell => cell.classList.contains('saved'));
+      const scoreCellsPlayer2 = document.querySelectorAll(`.score-cell.player-2`);
+      const allSaved2 = Array.from(scoreCellsPlayer2).every(cell => cell.classList.contains('saved'));
+      if (allSaved1 && allSaved2) {
+        calculateTotal(1);
+        calculateTotal(2);
+      }
     }
 
     updateRollsRemaining();
