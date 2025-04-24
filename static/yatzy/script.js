@@ -6,12 +6,12 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
     const diceImages = [
-        "http://22olwe.ssis.nu/static/yatzy/assets/dice1.png",
-        "http://22olwe.ssis.nu/static/yatzy/assets/dice2.png",
-        "http://22olwe.ssis.nu/static/yatzy/assets/dice3.png",
-        "http://22olwe.ssis.nu/static/yatzy/assets/dice4.png",
-        "http://22olwe.ssis.nu/static/yatzy/assets/dice5.png",
-        "http://22olwe.ssis.nu/static/yatzy/assets/dice6.png"
+        "https://22olwe.ssis.nu/static/yatzy/assets/dice1.png",
+        "https://22olwe.ssis.nu/static/yatzy/assets/dice2.png",
+        "https://22olwe.ssis.nu/static/yatzy/assets/dice3.png",
+        "https://22olwe.ssis.nu/static/yatzy/assets/dice4.png",
+        "https://22olwe.ssis.nu/static/yatzy/assets/dice5.png",
+        "https://22olwe.ssis.nu/static/yatzy/assets/dice6.png"
     ];
 
     const rollButton = document.querySelector(".roll-button");
