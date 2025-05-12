@@ -31,7 +31,6 @@
         <div class="game-board">
             <div class="player-section player-1">
                 <div class="player-info player-1">
-                    <!-- <div class="player-circle"></div> -->
                     <span>Spelare 1</span>
                 </div>
                 <div class="player-slots">
@@ -44,11 +43,11 @@
             </div>
             <div class="centre-wrapper">
                 <div class="dice-section">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
-                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice" alt="die">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice" alt="die">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice" alt="die">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice" alt="die">
+                    <img src="{{ url_for('static', filename='yatzy/assets/dice1.png') }}" class="dice" alt="die">
                 </div>
                 <div class="rolls-remaining">Kast kvar: 3</div>
                 <div class="roll-button">Kasta tärningar</div>
@@ -62,7 +61,6 @@
                     <div class="slot"></div>
                 </div>
                 <div class="player-info player-2">
-                    <!-- <div class="player-circle"></div> -->
                     <span>Spelare 2</span>
                 </div>
             </div>
@@ -70,8 +68,8 @@
         <div class="scoreboard">
             <div class="score-header">
                 <div></div>
-                <div>Player 1</div>
-                <div>Player 2</div>
+                <div>Spelare 1</div>
+                <div>Spelare 2</div>
             </div>
             <div class="score-row">
                 <div>Ettor</div>
@@ -103,11 +101,6 @@
                 <div class="score-cell player-1" id="player1-sixes"></div>
                 <div class="score-cell player-2" id="player2-sixes"></div>
             </div>
-            <!-- <div class="score-row sum">
-                <div>SUMMA</div>
-                <div class="score-cell player-1" id="player1-sum"></div>
-                <div class="score-cell player-2" id="player2-sum"></div>
-            </div> -->
             <div class="score-row bonus">
                 <div>BONUS</div>
                 <div class="score-cell player-1" id="player1-bonus"></div>

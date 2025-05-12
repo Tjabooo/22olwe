@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const score = target.textContent.trim();
-      if (score === "") {
+      if (score === "" && rollsRemaining < 3) {
         const confirmZero = confirm("Är du säker på att du vill spara 0 poäng?");
         if (!confirmZero) return;
 
