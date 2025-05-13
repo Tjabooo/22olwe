@@ -83,13 +83,11 @@ document.addEventListener("DOMContentLoaded", () => {
       activePlayerInfo.style.color = "#FFD700";
       activePlayerInfo.style.textShadow = "0 0 8px #FFD700";
       activePlayerInfo.style.fontWeight = "bold";
-      activePlayerInfo.style.textDecoration = "underline";
 
       const inactivePlayerInfo = document.querySelector(`.player-info.player-${currentPlayer % 2 + 1}`);
       inactivePlayerInfo.style.color = "white";
       inactivePlayerInfo.style.textShadow = "none";
       inactivePlayerInfo.style.fontWeight = "normal";
-      inactivePlayerInfo.style.textDecoration = "none";
 
       rollsRemaining = 3;
       updateRollsRemaining();
