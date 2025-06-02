@@ -83,9 +83,9 @@ class Routes():
     def inlamningar():
         return render_template('/Skolarbete/Webbutveckling/Inlämningar/inlamningar.html')
 
-    @app.route('/skolarbete/webbutveckling/wordpress', methods=['POST'])
-    def wordpress():
-        return render_template('/Skolarbete/Webbutveckling/Wordpress/index.php')
+    # @app.route('/skolarbete/webbutveckling/wordpress', methods=['POST'])
+    # def wordpress():
+    #     return render_template('/Skolarbete/Webbutveckling/Wordpress/index.php')
 
     @app.route('/skolarbete/webbutveckling/inlamningar/yatzy', methods=['POST', 'GET'])
     def yatzy():
