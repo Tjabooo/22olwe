@@ -2,3 +2,7 @@ __pycache__/
 .vscode/
 platsbokning/tickets/
 static/media/downloadables/
+
+# local secrets / Windows download markers
+wp-config.php
+*:Zone.Identifier
