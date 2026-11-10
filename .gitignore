@@ -2,3 +2,6 @@ __pycache__/
 .vscode/
 platsbokning/tickets/
 static/media/downloadables/
+
+# WordPress config holds database passwords: keep it local
+wp-config.php
